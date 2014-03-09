@@ -1,0 +1,6 @@
+"AddonInfo"
+{
+	"name" "Clip Tool"
+	"author_name" "TGiFallen"
+	"info" "A tool for clipping planes off of entities, supports duping."
+}
