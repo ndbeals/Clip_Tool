@@ -55,8 +55,6 @@ net.Receive("clipping_remove_clip" , function ()
 	local ent = net.ReadEntity()
 	local index = net.ReadInt(16)
 
-	print("removing ", index , "from" , ent )
-
 	table.remove(Clips[ent] , index) 
 	ent.MaxClips = math.min(cvar:GetInt() , #Clips[ent])
 

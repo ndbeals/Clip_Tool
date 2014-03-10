@@ -19,7 +19,7 @@ if CLIENT then
 	language.Add( "Tool.visual.desc", "Visually Clip Models" )
 	language.Add( "Tool.visual.0", "Primary: Define a clip plane      Secondary: Clip Model      Reload: Remove Clips" )
 	language.Add( "Tool.visual.1", "Primary: Click on a second spot      Secondary: Clip Model      Reload: Restart" )
-	language.Add( "Tool.visual.2", "Primary: Select the side of the prop you want to keep      Secondary: Clip Model      Seconday: Clip Model" )
+	language.Add( "Tool.visual.2", "Primary: Select the side of the prop you want to keep      Secondary: Clip Model      Reload: Restart" )
 	language.Add( "Tool.visual.3", "Primary: Define a new plane based off of another prop      Secondary: Clip Model      Reload: Restart")
 	language.Add( "Tool.visual.4", "Aim at other props:      Secondary: Clip Model      Reload: Restart")
 
