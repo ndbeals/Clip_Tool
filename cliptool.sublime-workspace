@@ -1,0 +1,461 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"GetNetw",
+				"GetNetworkedBool	:GetNetworkedBool"
+			],
+			[
+				"GetPhys",
+				"GetPhysicsObject	:GetPhysicsObject"
+			],
+			[
+				"SetNetw",
+				"SetNetworkedBool	:SetNetworkedBool"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/D/Programming/Gmod/Projects - WiP/Fallen's Pack - Old SVN to be updated/Fallen's Build tools/lua/weapons/gmod_tool/stools/acf_weight.lua",
+			"settings":
+			{
+				"buffer_size": 9861,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/ACF/lua/weapons/gmod_tool/stools/acfarmorprop.lua",
+			"settings":
+			{
+				"buffer_size": 9779,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/Programming/Gmod/Projects - Finished/No-Collide_All/lua/weapons/gmod_tool/stools/nocollideall_multi.lua",
+			"settings":
+			{
+				"buffer_size": 2971,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 380.0,
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/Text Files/Important things.txt",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/Clip_Tool/README.md",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/Clip_Tool/addon.txt",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/Clip_Tool/addon.json",
+		"/D/Programming/Gmod/Publishing/Lua_Reloadent/addon.json",
+		"/D/Programming/Gmod/Projects - Finished/Drag_Tool/addon.txt",
+		"/D/Programming/Gmod/Projects - Finished/Drag_Tool/addon.json",
+		"/D/Programming/Gmod/Projects - Finished/No-Collide_All/addon.json",
+		"/D/Programming/Gmod/Projects - Finished/Lua_Reloadent/addon.txt",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/Drag_Tool/addon.txt",
+		"/D/Programming/Gmod/Projects - Finished/Lua_Reloadent/README.md",
+		"/D/Programming/Gmod/Projects - Finished/Lua_Reloadent/lua/autorun/lua_reloadent.lua",
+		"/D/Programming/Gmod/Projects - Finished/Lua_Reloadent/addon.json",
+		"/D/Programming/Gmod/Projects - Finished/Lua_Reloadent/.gitattributes",
+		"/D/Programming/Gmod/Projects - Finished/Drag_Tool/LICENSE.txt",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/Drag_Tool/lua/weapons/gmod_tool/stools/dragtool.lua",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/data/aaa/aaa.txt",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/ACF/lua/entities/acf_ammo.lua",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/No Collide all multi/lua/weapons/gmod_tool/stools/nocollideall_multi.lua",
+		"/K/Programs/Adobe Photoshop CS5 Extended (Crack + Instructions)/README.txt",
+		"/D/WoW Stuff/Important Info/Manager Chat - Crit Caps.txt",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/lua_reloadent/lua/autorun/lua_reloadent.lua",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/lua/includes/modules/duplicator.lua",
+		"/D/WoW Stuff/Mount Drops.txt",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/photocopy/lua/includes/modules/photocopy.util.lua",
+		"/D/Programming/Gmod/Projects - WiP/Fallen's Pack - Old SVN to be updated/Drag Tool/lua/weapons/gmod_tool/stools/dragtool.lua",
+		"/K/Games/World of Warcraft/Interface/AddOns/_FallenCode/warriormacro.lua",
+		"/K/Games/World of Warcraft/Interface/AddOns/_FallenCode/_FallenCode.toc",
+		"/K/Games/World of Warcraft/Interface/AddOns/_FallenCode/framecontrol.lua",
+		"/K/Games/World of Warcraft/Interface/AddOns/_FallenCode/friendcontrol.lua",
+		"/K/Games/World of Warcraft/Interface/AddOns/_FallenCode/options.lua",
+		"/K/Games/World of Warcraft/Interface/AddOns/_FallenCode/base.lua",
+		"/D/WoW Stuff/Honor Buddy/HB/Routines/Singular/ClassSpecific/Warrior/Arms.cs",
+		"/K/Games/World of Warcraft/Interface/AddOns/ClassMonitor_ConfigUI/definitions/helpers.lua",
+		"/D/WoW Stuff/Honor Buddy/Profiles/Cava's Levelling/Scripts/MovetoMainCity[Cava].xml",
+		"/D/WoW Stuff/Honor Buddy/HB/Default Profiles/DungeonBuddy/Mists of Pandaria/Raids/The Underhold.xml",
+		"/D/WoW Stuff/Honor Buddy/HB/Default Profiles/DungeonBuddy/Mists of Pandaria/Raids/Downfall.xml",
+		"/D/WoW Stuff/Honor Buddy/HB/Default Profiles/DungeonBuddy/Mists of Pandaria/Raids/Last Stand of the Zandalari.xml",
+		"/K/Games/World of Warcraft/Interface/AddOns/Malkorok/Malkorok.lua",
+		"/K/Games/World of Warcraft/Interface/AddOns/CoolLine/core.lua",
+		"/K/Games/World of Warcraft/Interface/AddOns/ClassMonitor_ConfigUI/core.lua",
+		"/K/Games/World of Warcraft/Interface/AddOns/ClassMonitor_ConfigUI/definitions/globals.lua",
+		"/K/Games/World of Warcraft/WTF/Account/FREETV5/SavedVariables/ElvUI.lua",
+		"/K/Games/World of Warcraft/Logs/WoWCombatLog.txt",
+		"/D/Torrents/Completed/Adobe photoshop CS6 13.0 [Extended x86+x64] (2012) PC/ReadMe.txt",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/advtire/lua/entities/tire/init.lua",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/advtire/lua/weapons/gmod_tool/stools/tiretool.lua",
+		"/K/Games/World of Warcraft/Interface/AddOns/MogIt_Leather/Hands.lua",
+		"/K/Games/World of Warcraft/Interface/AddOns/MogIt/Bindings.xml",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/unused/photocopy/LICENSE.txt",
+		"/K/Games/Steam/steamapps/nathanbeals123/garrysmod/garrysmod/addons/ACF/.svn/entries",
+		"/C/Program Files/TortoiseGit/changelog.txt",
+		"/D/Programming/Gmod/Projects - Finished/No-Collide_All/README.md",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/unused/photocopy/README.md",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/No Collide all multi/addon.txt",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/No Collide all multi/addon.json",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/Fallen's Build tools/lua/weapons/gmod_tool/stools/acf_weight.lua",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/lua_reloadent/addon.txt",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/lua_reloadent/addon.json",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/photocopy/addon.txt",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/advtire/addon.txt",
+		"/D/Programming/Gmod/Fallen's Pack - Old SVN to be updated/Fallen's Build tools/lua/weapons/gmod_tool/stools/acf_weight.lua",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/gamemodes/sandbox/entities/weapons/gmod_tool/shared.lua",
+		"/K/Games/Steam/steamapps/sourcemods/gmod13svn/garrysmodbeta/addons/lua_reloadent/info.txt",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/addons.txt",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/advtire/info.txt",
+		"/C/Program Files/PeerBlock/lists/permblock.p2b",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/gcompute/addon.txt",
+		"/C/Users/Nate/Documents/GitHub/photocopy/lua/includes/modules/photocopy.util.lua",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/vfs/addon.txt",
+		"/K/Games/Steam/steamapps/nathanbeals123/garrysmod/garrysmod/lua/projects/luasuite/luasuite/blank.lua",
+		"/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/gcompute/lua/gcompute/runtime/thread.lua",
+		"/D/WoW Stuff/Mumble/murmur_start.sh",
+		"/C/Users/Nate/AppData/Local/Temp/scp22334/home/fallen/start_mumble.sh",
+		"/K/Games/World of Warcraft/WTF/Account/FREETV5/SavedVariables/WeakAuras.lua",
+		"/K/Games/World of Warcraft/Interface/AddOns/GladiatorlosSA/GladiatorlosSA.lua",
+		"/K/Games/World of Warcraft/Interface/AddOns/GladiatorlosSA/spelllist.lua",
+		"/D/WoW Stuff/Honor Buddy/Profiles/Mine/UngaIngoo Cloth Farm [Tank Class].xml",
+		"/D/WoW Stuff/Honor Buddy/Profiles/Mine/Valley Gather_Mine_Herb.xml",
+		"/D/WoW Stuff/Mumble/murmur_start2.sh",
+		"/K/Games/Steam/steamapps/sourcemods/gmod13svn/garrysmodbeta/addons/lua_reloadent/lua/autorun/lua_reloadent.lua",
+		"/K/Games/Steam/steamapps/nathanbeals123/garrysmod/garrysmod/lua/libcompress.lua",
+		"/K/Games/Steam/steamapps/nathanbeals123/garrysmod/garrysmod/lua/portalgod/levellib.lua",
+		"/C/Users/Nate/AppData/Local/Temp/scp35272/home/fallen/murmur/tempfile",
+		"/C/Users/Nate/AppData/Local/Temp/scp14916/home/fallen/murmur/murmur.ini",
+		"/C/Users/Nate/AppData/Local/Temp/scp44977/etc/default/xinetd",
+		"/C/Users/Nate/AppData/Local/Temp/scp46004/lib/init/vars.sh",
+		"/C/Users/Nate/AppData/Local/Temp/scp03119/bin/sh",
+		"/C/Users/Nate/AppData/Local/Temp/scp44344/etc/default/halt",
+		"/K/Games/World of Warcraft/WTF/Account/FREETV5/SavedVariables/WeakAurasOptions.lua",
+		"/K/Games/World of Warcraft/Interface/AddOns/TradeSkillMaster_CoolDowns/TradeSkillMaster_CoolDowns.lua",
+		"/C/AdwCleaner/AdwCleaner[S0].txt",
+		"/K/Games/World of Warcraft/Interface/AddOns/TradeSkillMaster_Crafting/Modules/Queue.lua",
+		"/K/Games/World of Warcraft/Interface/AddOns/TradeSkillMaster_Crafting/TradeSkillMaster_Crafting.lua",
+		"/K/Games/World of Warcraft/Interface/AddOns/TradeSkillMaster_Crafting/Modules/CraftingGUI.lua",
+		"/K/Games/World of Warcraft/Interface/AddOns/TradeSkillMaster/TradeSkillMaster.lua",
+		"/D/WoW Stuff/Honor Buddy/HB/Logs/Proudmoore - Eridia/11692 2014-01-14 00.31.txt",
+		"/K/Games/World of Warcraft/Interface/AddOns/TradeSkillMaster_CoolDowns/embeds.xml",
+		"/K/Games/World of Warcraft/Interface/AddOns/_NPCScan/_NPCScan.toc",
+		"/D/WoW Stuff/Honor Buddy/HB 5.4-716/Routines/TuanHADK/#Please Read - Installation Guide.txt",
+		"/D/WoW Stuff/Honor Buddy/HB 5.4-716/Logs/Arygos - Gaialane/5228 2013-12-25 09.07.txt",
+		"/D/WoW Stuff/Honor Buddy/HB 5.4-716/Logs/Arygos - Gaialane/5212 2013-12-25 14.29.txt",
+		"/C/Users/Nate/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/D/WoW Stuff/Honor Buddy/Profiles/Botanist Donator/Neutral/Farming/Profession Related/Tailoring/Questing Bot/[QO-N][Tailoring][Tank-Class][windwool-cloth][mote-of-harmony][GREENS]_botanist_shipwreck-of-the-vanguard_jade-forest.xml",
+		"/D/WoW Stuff/Honor Buddy/Profiles/Botanist Donator/XXX - Development Tools - XXX/IDs/Me.HearthstoneAreaId.xml",
+		"/D/WoW Stuff/TSMAppLog.txt",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/@Resources/Structure/Double/Main.inc",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/Panels/WorldofWarcraft/full.ini",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/Panels/LeagueofLegends/UserVariables.inc",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/InstalledPanels/#Windows8/Calendar/Panel2X.ini",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/@Resources/Structure/Single/Main.inc",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/Panels/BigPicture/BigPicture.ini",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/Panels/LeagueofLegends/full.ini",
+		"/D/WoW Stuff/Honor Buddy/Profiles/Kick's Mega Pack/Kick's Profiles/1-90 Questing Profile Pack/Questing Instructions.txt",
+		"/D/WoW Stuff/Honor Buddy/HB/Honorbuddy.xml",
+		"/D/Torrents/Completed/Adobe Illustrator CS6 Crack .DLL Files RELOADED/Readme - Before it's too late!.txt",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/@Resources/Structure/SingleNoHover/Main.inc",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/@Resources/Structure/SingleNoHover/Top.inc",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/@Resources/Structure/Double/Top.inc",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/@Resources/Structure/Single/Top.inc",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/TextItems/Extra/ExtraBuilder/Created/WorldofWarcraft/item.ini",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/@Resources/Common/Variables/UserVariables.inc",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/Panels/WorldofWarcraft/UserVariables.inc",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/Panels/WorldofWarcraft/windows8.ini",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/Panels/Nametest/full.ini",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/Panels/BigPicture/BigPicture2.ini",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/InstalledPanels/#Windows8/Video/Panel2X.ini",
+		"/C/Users/Nate/Documents/Rainmeter/Skins/WP7/readme.txt"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"300",
+			"heroic",
+			"color",
+			"backdrop",
+			"300",
+			"NewCooldown",
+			"/mal ai",
+			"ai",
+			"auth",
+			"ClassName",
+			"ent_index",
+			"luaexists",
+			"temp2",
+			"temp2 ",
+			"phys:",
+			"phys",
+			"ku",
+			"c1",
+			"self.",
+			"diam",
+			"cwl",
+			"load",
+			"constrain",
+			"constran",
+			"PhysicsObject",
+			"EntityPhysics",
+			"EntitySaver",
+			"EntitySaver.Load",
+			"DoGene",
+			"EntityModifiers",
+			"sound",
+			"$PIDFILE",
+			" $",
+			"daemon",
+			"daenib",
+			"MURMUR_DAEMON_START",
+			"verbose",
+			"\\r",
+			"/bin/sh",
+			"PATH",
+			"daemon",
+			"CreateItemCoolDownSV",
+			"mail",
+			"MODULEAPI",
+			"addqueue",
+			"queue",
+			"addqueue",
+			"single",
+			"#ItemSize#",
+			"#itemSize#",
+			"58",
+			"#itemSize#",
+			"death strike",
+			"death and decay",
+			"MovementDisabled",
+			"scroll",
+			"outbrea",
+			"move",
+			"follow",
+			"death coil",
+			"q=",
+			"auto",
+			"comp",
+			"auto",
+			"autocomplete",
+			"auto",
+			"drag"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"600",
+			"self.phys:",
+			"self.phys",
+			"data.",
+			"singlenohover",
+			"(#ItemSize#/1.58)",
+			"(#itemSize#/1.58)",
+			"(#itemSize#/1.5)"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/D/Programming/Gmod/Projects - WiP/Fallen's Pack - Old SVN to be updated/Fallen's Build tools/lua/weapons/gmod_tool/stools/acf_weight.lua",
+					"settings":
+					{
+						"buffer_size": 9861,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1019.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/K/Games/Steam/steamapps/common/GarrysMod/garrysmod/addons/ACF/lua/weapons/gmod_tool/stools/acfarmorprop.lua",
+					"settings":
+					{
+						"buffer_size": 9779,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5886,
+								5886
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2760.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/Programming/Gmod/Projects - Finished/No-Collide_All/lua/weapons/gmod_tool/stools/nocollideall_multi.lua",
+					"settings":
+					{
+						"buffer_size": 2971,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								468,
+								468
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

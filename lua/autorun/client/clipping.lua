@@ -27,10 +27,6 @@ local function AddPropClip( ent , clip )
 	Clips[ ent ] = Clips[ ent ] or {}
 	Clips[ ent ][ #Clips[ ent ] + 1 ] = clip
 
-
-	ent.ClipData = ent.ClipData or {}
-	ent.ClipData[ #ent.ClipData + 1 ] = clip
-
 	ent.MaxClips = math.min( cvar:GetInt() , #Clips[ent] )
 
 	ent:CallOnRemove( "RemoveFromClippedTable" , function( ent ) Clips[ent] = nil end)
@@ -81,26 +77,22 @@ local IsValid = IsValid
 
 local n , enabled
 function RenderOverride(self)
-	if self.ClipData and IsValid(self) then
-		enabled = render_EnableClipping( true )
+	enabled = render_EnableClipping( true )
 
-		for i = 1 , self.MaxClips do
-			
-			n = ang_Forward( ent_LocalTWA(self , Clips[self][i][1] ) )
-			
-			render_PushCCP(n, vec_Dot(ent_LocalTW(self , Clips[self][i][3])+n* Clips[self][i][2] , n ) )
-
-		end
-
-		ent_SetupBones( self )
-		ent_DrawModel( self )
-
-		for i = 1 , self.MaxClips do
-			render_PopCCP()
-		end
-
-		render_EnableClipping( enabled )
+	for i = 1 , self.MaxClips do
+		n = ang_Forward( ent_LocalTWA(self , Clips[self][i][1] ) )
+		
+		render_PushCCP(n, vec_Dot(ent_LocalTW(self , Clips[self][i][3])+n* Clips[self][i][2] , n ) )
 	end
+
+	ent_SetupBones( self )
+	ent_DrawModel( self )
+
+	for i = 1 , self.MaxClips do
+		render_PopCCP()
+	end
+
+	render_EnableClipping( enabled )
 end
 
 hook.Add("InitPostEntity" , "RequestClips" , function()
