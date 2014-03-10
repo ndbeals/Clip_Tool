@@ -47,7 +47,7 @@ local halfmodel2 = ClientsideModel("error.mdl")
 halfmodel2:SetNoDraw(true)
 
 local aiment
-local last = NULL
+local last
 
 local render_EnableClipping = render.EnableClipping
 local render_PushCustomClipPlane = render.PushCustomClipPlane
@@ -72,7 +72,7 @@ local function drawpreview()
 
 	if IsValid(last) then
 		last:SetNoDraw(false)
-		last = NULL
+		last = nil
 	end
 
 	if !IsValid(LocalPlayer()) or !IsValid(aiment) then return end
