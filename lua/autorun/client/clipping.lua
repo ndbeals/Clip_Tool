@@ -7,11 +7,7 @@ local cvar = CreateClientConVar("max_clips_per_prop" , 3 , true , false )
 cvars.AddChangeCallback( "max_clips_per_prop" ,function(_,_,new)
 	new = tonumber(new)
 	for ent , _ in pairs( Clips ) do
-		if new >= #ent.ClipData then
-			ent.MaxClips = #ent.ClipData
-		else
-			ent.MaxClips = new
-		end
+		ent.MaxClips = math.min(new , #Clips[ent])
 	end
 end)
 
@@ -59,8 +55,14 @@ net.Receive("clipping_remove_clip" , function ()
 	local ent = net.ReadEntity()
 	local index = net.ReadInt(16)
 
+	print("removing ", index , "from" , ent )
+
 	table.remove(Clips[ent] , index) 
-	ent.RenderOverride = nil 
+	ent.MaxClips = math.min(cvar:GetInt() , #Clips[ent])
+
+	if index == 1 then 
+		ent.RenderOverride = nil
+	end
 end)
 
 
@@ -86,6 +88,7 @@ local IsValid = IsValid
 
 local n , enabled
 function RenderOverride(self)
+	if !IsValid(self) then return end
 	enabled = render_EnableClipping( true )
 
 	for i = 1 , self.MaxClips do

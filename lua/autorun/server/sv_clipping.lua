@@ -2,7 +2,8 @@ AddCSLuaFile("autorun/client/clipping.lua")
 AddCSLuaFile("autorun/client/preview.lua")
 
 util.AddNetworkString("clipping_new_clip")
-util.AddNetworkString("clipping_all_prop_clip")
+util.AddNetworkString("clipping_all_prop_clips")
+util.AddNetworkString("clipping_remove_clip")
 util.AddNetworkString("clipping_request_all_clips")
 util.AddNetworkString("clipping_remove_all_clips")
 util.AddNetworkString("clipping_preview_clip")
@@ -71,6 +72,9 @@ function Clipping.RemoveClip( ent , index )
 	net.Broadcast()
 end
 
+function Clipping.GetClips( ent )
+	return Clipping.EntityClips[ent]
+end
 
 net.Receive("clipping_request_all_clips" , function(_,ply)
 	for ent , _ in pairs( Clipping.EntityClips ) do

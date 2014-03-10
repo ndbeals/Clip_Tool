@@ -13,14 +13,14 @@ cvars.AddChangeCallback("visual_adv_distance",function(_,_,new)
 	d = tonumber(new) or 0		
 end)
 
-concommand.Add("visual_adv_reset",function()
-	norm = Angle(0,0,0)
-	RunConsoleCommand("visual_adv_distance" , 0)
-end)
+
 concommand.Add("visual_reset",function()
 	RunConsoleCommand("visual_p",0)
 	RunConsoleCommand("visual_y",0)
 	RunConsoleCommand("visual_distance",0)
+
+	d = 0 
+	norm = Angle(0,0,0)
 end)
 
 --local function ClipData( um )
@@ -77,7 +77,7 @@ local function drawpreview()
 
 	if !IsValid(LocalPlayer()) or !IsValid(aiment) then return end
 	if GetConVarString("gmod_toolmode") != "visual" or LocalPlayer():GetActiveWeapon():GetClass() != "gmod_tool" then return end		
-	
+
 	ent_SetNoDraw(aiment,true)
 
 	last = aiment
