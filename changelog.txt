@@ -1,0 +1,10 @@
+--- GMOD 13 update 10/3/13
+- changed all networking to use net library
+- significantly improved the performance of the draw hook for each clip
+- significantly improved performance of the clip previewing
+- removed "Render inside" option as it was rarely used, and wasted frame time
+- Updated how it saves clip data for dupes, old clips still work due to compat.lua
+- removed the "refresh clips" button, as it i shouldn't be needed anymore
+- rolled the functionality of both tools into one.
+- added a Number Scratch (the blue ball thing) on the distance, pitch and yaw sliders, these allow you to go into extreme detail.
+- made clips undo-able
