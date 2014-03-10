@@ -24,46 +24,55 @@ local function ReadClip( ent )
 end
 
 local function AddPropClip( ent , clip )
-	Clips[ ent ] = Clips[ ent ] or {}
-	Clips[ ent ][ #Clips[ ent ] + 1 ] = clip
+	Clips[ent] = Clips[ent] or {}
+	Clips[ent][#Clips[ent]+1] = clip
 
-	ent.MaxClips = math.min( cvar:GetInt() , #Clips[ent] )
+	ent.MaxClips = math.min(cvar:GetInt() , #Clips[ent])
 
-	ent:CallOnRemove( "RemoveFromClippedTable" , function( ent ) Clips[ent] = nil end)
+	ent:CallOnRemove("RemoveFromClippedTable" , function( ent ) Clips[ent] = nil end)
 	
 	ent.RenderOverride = RenderOverride
 end
 
-net.Receive( "clipping_new_clip" , function()
+net.Receive("clipping_new_clip" , function()
 	local ent = net.ReadEntity()
-	AddPropClip( ent , ReadClip( ent ) )
+	AddPropClip(ent , ReadClip( ent ))
 end)
 
-net.Receive( "clipping_all_prop_clips" , function()
+net.Receive("clipping_all_prop_clips" , function()
 	local ent = net.ReadEntity()
-	local clips = net.ReadInt( 16 )
+	local clips = net.ReadInt(16)
 
 	for i = 1 , clips do
-		AddPropClip( ent , ReadClip(ent) )
+		AddPropClip(ent , ReadClip(ent))
 	end
 end)
 
-net.Receive( "clipping_remove_clips" , function ()
+net.Receive("clipping_remove_all_clips" , function ()
 	local ent = net.ReadEntity()
 
 	Clips[ent] = nil 
 	ent.RenderOverride = nil 
 end)
 
+net.Receive("clipping_remove_clip" , function ()
+	local ent = net.ReadEntity()
+	local index = net.ReadInt(16)
+
+	table.remove(Clips[ent] , index) 
+	ent.RenderOverride = nil 
+end)
+
+
 
 
 local render_EnableClipping = render.EnableClipping
-local render_PushCCP = render.PushCustomClipPlane
-local render_PopCCP = render.PopCustomClipPlane
+local render_PushCustomClipPlane = render.PushCustomClipPlane
+local render_PopCustomClipPlane = render.PopCustomClipPlane
 
 local entm = FindMetaTable("Entity")
-local ent_LocalTWA = entm.LocalToWorldAngles
-local ent_LocalTW = entm.LocalToWorld
+local ent_LocalToWorldAngles = entm.LocalToWorldAngles
+local ent_LocalToWorld = entm.LocalToWorld
 local ent_SetupBones = entm.SetupBones
 local ent_DrawModel = entm.DrawModel
 
@@ -80,16 +89,16 @@ function RenderOverride(self)
 	enabled = render_EnableClipping( true )
 
 	for i = 1 , self.MaxClips do
-		n = ang_Forward( ent_LocalTWA(self , Clips[self][i][1] ) )
+		n = ang_Forward( ent_LocalToWorldAngles(self , Clips[self][i][1] ) )
 		
-		render_PushCCP(n, vec_Dot(ent_LocalTW(self , Clips[self][i][3])+n* Clips[self][i][2] , n ) )
+		render_PushCustomClipPlane(n, vec_Dot(ent_LocalToWorld(self , Clips[self][i][3])+n* Clips[self][i][2] , n ) )
 	end
 
-	ent_SetupBones( self )
+	--ent_SetupBones( self )
 	ent_DrawModel( self )
 
 	for i = 1 , self.MaxClips do
-		render_PopCCP()
+		render_PopCustomClipPlane()
 	end
 
 	render_EnableClipping( enabled )

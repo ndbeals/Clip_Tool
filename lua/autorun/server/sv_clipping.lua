@@ -4,7 +4,8 @@ AddCSLuaFile("autorun/client/preview.lua")
 util.AddNetworkString("clipping_new_clip")
 util.AddNetworkString("clipping_all_prop_clip")
 util.AddNetworkString("clipping_request_all_clips")
-util.AddNetworkString("clipping_remove_clips")
+util.AddNetworkString("clipping_remove_all_clips")
+util.AddNetworkString("clipping_preview_clip")
 
 Clipping = {}
 
@@ -37,7 +38,7 @@ function Clipping.NewClip( ent , clip )
 	end
 
 	ent:CallOnRemove( "RemoveFromClippedTable" , function( ent ) Clipping.EntityClips[ent] = nil end)
-	duplicator.StoreEntityModifier( ent , "clipping_all_prop_clips", Clipping.EntityClips[ ent ] )
+	duplicator.StoreEntityModifier( ent , "clipping_all_prop_clips", Clipping.EntityClips[ent] )
 
 	SendEntClip( ent , clip )
 end
@@ -51,6 +52,23 @@ function Clipping.SendAllPropClips( ent , player )
 			WriteClip( clip )
 		end
 	net.Send( player )
+end
+
+function Clipping.RemoveClips( ent )
+	Clipping.EntityClips[ ent ] = nil 	
+
+	net.Start( "clipping_remove_all_clips" )
+		net.WriteEntity( ent )
+	net.Broadcast()
+end
+
+function Clipping.RemoveClip( ent , index )
+	table.remove(Clipping.EntityClips[ent] , index)	
+
+	net.Start( "clipping_remove_clip" )
+		net.WriteEntity( ent )
+		net.WriteInt( index , 16 )
+	net.Broadcast()
 end
 
 
@@ -69,14 +87,6 @@ hook.Add( "Think" , "Clipping_Send_All_Clips" , function()
 		Clipping.Queue[ #Clipping.Queue ] = nil
 	end
 end)
-
-function Clipping.RemoveClips( ent )
-	Clipping.EntityClips[ ent ] = notification.AddLegacy()
-
-	net.Start( "clipping_remove_clips" )
-		net.WriteEntity( ent )
-	net.Broadcast()
-end
 
 duplicator.RegisterEntityModifier( "clipping_all_prop_clips", function( p , ent , data)
 	if !IsValid(ent) or !data then return end
