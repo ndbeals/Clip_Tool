@@ -76,8 +76,6 @@ function TOOL:LeftClick( trace )
 	self.Points = self.Points or {}
 	self.Step = self.Step or 0
 
-	print(self:GetStage())
-
 	if !IsValid(ent) then return end
 	if ent:IsPlayer() or ent:IsWorld() then return end
 	
