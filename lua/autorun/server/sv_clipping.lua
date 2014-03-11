@@ -9,7 +9,6 @@ util.AddNetworkString("clipping_remove_all_clips")
 util.AddNetworkString("clipping_preview_clip")
 
 Clipping = {}
-
 Clipping.EntityClips = {}
 Clipping.Queue = {}
 
@@ -64,12 +63,14 @@ function Clipping.RemoveClips( ent )
 end
 
 function Clipping.RemoveClip( ent , index )
-	table.remove(Clipping.EntityClips[ent] , index)	
+	if( IsValid( ent ) and Clipping.EntityClips[ent] != nil ) then
+		table.remove(Clipping.EntityClips[ent] , index)	
 
-	net.Start( "clipping_remove_clip" )
-		net.WriteEntity( ent )
-		net.WriteInt( index , 16 )
-	net.Broadcast()
+		net.Start( "clipping_remove_clip" )
+			net.WriteEntity( ent )
+			net.WriteInt( index , 16 )
+		net.Broadcast()
+	end
 end
 
 function Clipping.GetClips( ent )
@@ -95,7 +96,31 @@ end)
 duplicator.RegisterEntityModifier( "clipping_all_prop_clips", function( p , ent , data)
 	if !IsValid(ent) or !data then return end
 
-	for _ , clip in pairs(data) do
+	for _, clip in pairs(data) do
 		Clipping.NewClip( ent , clip)
 	end
 end)
+
+--compatitbility for old tool style dupes 
+duplicator.RegisterEntityModifier( "clips", function( p , ent , data)
+	if( !IsValid( ent ) or data == nil ) then return end
+
+	for _, oldclip in pairs( data ) do
+		local clip = { 
+			oldclip.n, 
+			oldclip.d 
+		}
+
+		-- this is done here so that we dont add new clips to the dupe, just use the old ones (maybe convert them later on?)
+		if not Clipping.EntityClips[ ent ] then
+			Clipping.EntityClips[ ent ] = { clip }
+
+		else
+			table.insert( Clipping.EntityClips[ ent ] , clip )
+		end
+
+		ent:CallOnRemove( "RemoveFromClippedTable" , function( ent ) Clipping.EntityClips[ent] = nil end)
+
+		SendEntClip( ent , clip )
+	end
+end )
