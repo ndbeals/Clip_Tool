@@ -96,7 +96,9 @@ end)
 duplicator.RegisterEntityModifier( "clipping_all_prop_clips", function( p , ent , data)
 	if !IsValid(ent) or !data then return end
 
-	for _, clip in pairs(data) do
-		Clipping.NewClip( ent , clip)
+	timer.Simple(0.25 , function()
+		for _, clip in pairs(data) do
+			Clipping.NewClip( ent , clip)
+		end
 	end
 end)

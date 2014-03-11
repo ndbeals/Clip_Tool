@@ -30,14 +30,20 @@ local function AddPropClip( ent , clip )
 	ent.RenderOverride = RenderOverride
 end
 
+
 net.Receive("clipping_new_clip" , function()
 	local ent = net.ReadEntity()
+
+	if !IsValid(ent) then return end
+
 	AddPropClip(ent , ReadClip( ent ))
 end)
 
 net.Receive("clipping_all_prop_clips" , function()
 	local ent = net.ReadEntity()
 	local clips = net.ReadInt(16)
+
+	if !IsValid(ent) then return end
 
 	for i = 1 , clips do
 		AddPropClip(ent , ReadClip(ent))
@@ -47,6 +53,8 @@ end)
 net.Receive("clipping_remove_all_clips" , function ()
 	local ent = net.ReadEntity()
 
+	if !IsValid(ent) then return end
+
 	Clips[ent] = nil 
 	ent.RenderOverride = nil 
 end)
@@ -55,6 +63,8 @@ net.Receive("clipping_remove_clip" , function ()
 	local ent = net.ReadEntity()
 	local index = net.ReadInt(16)
 
+	if !IsValid(ent) then return end
+
 	table.remove(Clips[ent] , index) 
 	ent.MaxClips = math.min(cvar:GetInt() , #Clips[ent])
 
@@ -62,7 +72,6 @@ net.Receive("clipping_remove_clip" , function ()
 		ent.RenderOverride = nil
 	end
 end)
-
 
 
 
