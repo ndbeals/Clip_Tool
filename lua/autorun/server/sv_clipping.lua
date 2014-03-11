@@ -100,5 +100,5 @@ duplicator.RegisterEntityModifier( "clipping_all_prop_clips", function( p , ent 
 		for _, clip in pairs(data) do
 			Clipping.NewClip( ent , clip)
 		end
-	end
+	end)
 end)
