@@ -6,7 +6,9 @@ duplicator.RegisterEntityModifier( "clips", function( p , ent , data)
 
 	timer.Simple(0.25 , function()
 		for _, clip in pairs(data) do
-			Clipping.NewClip( ent , {clip.n,clip.d})
+			if IsValid(ent) then
+				Clipping.NewClip( ent , {clip.n,clip.d})
+			end
 		end
 	end)
 end)
