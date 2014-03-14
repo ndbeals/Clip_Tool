@@ -1,5 +1,6 @@
 local Clips = {}
 local RenderOverride
+local RenderInside
 
 
 local cvar = CreateClientConVar("max_clips_per_prop" , 3 , true , false )
@@ -37,6 +38,18 @@ net.Receive("clipping_new_clip" , function()
 	if !IsValid(ent) then return end
 
 	AddPropClip(ent , ReadClip( ent ))
+end)
+
+net.Receive("clipping_render_inside" , function()
+	local ent = net.ReadEntity()
+	local enabled = net.ReadBit()
+
+	if !IsValid(ent) then return end
+	ent.RenderInside = enabled
+
+	if !Clips[ent] then
+		ent.RenderOverride = RenderInside
+	end
 end)
 
 net.Receive("clipping_all_prop_clips" , function()
@@ -78,6 +91,7 @@ end)
 local render_EnableClipping = render.EnableClipping
 local render_PushCustomClipPlane = render.PushCustomClipPlane
 local render_PopCustomClipPlane = render.PopCustomClipPlane
+local render_CullMode = render.CullMode
 
 local entm = FindMetaTable("Entity")
 local ent_LocalToWorldAngles = entm.LocalToWorldAngles
@@ -104,14 +118,29 @@ function RenderOverride(self)
 		render_PushCustomClipPlane(n, vec_Dot(ent_LocalToWorld(self , Clips[self][i][3])+n* Clips[self][i][2] , n ) )
 	end
 
-	--ent_SetupBones( self )
+
 	ent_DrawModel( self )
+
+	if self.RenderInside then
+		render_CullMode(MATERIAL_CULLMODE_CW)
+			ent_DrawModel( self )
+		render_CullMode(MATERIAL_CULLMODE_CCW)
+	end
 
 	for i = 1 , self.MaxClips do
 		render_PopCustomClipPlane()
 	end
 
 	render_EnableClipping( enabled )
+end
+
+function RenderInside(self)
+	if IsValid(self) then
+		render_CullMode(MATERIAL_CULLMODE_CW)
+			ent_DrawModel( self )
+		render_CullMode(MATERIAL_CULLMODE_CCW)
+		ent_DrawModel( self )
+	end
 end
 
 hook.Add("InitPostEntity" , "RequestClips" , function()

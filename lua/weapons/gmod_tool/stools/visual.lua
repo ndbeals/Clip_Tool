@@ -151,16 +151,20 @@ function TOOL:RightClick( trace )
 
 	if !IsValid(ent) then return end
 	if ent:IsPlayer() or ent:IsWorld() then return end
+
+	if self:GetOwner():KeyDown( IN_SPEED ) then
+		Clipping.RenderInside( ent , !Clipping.GetRenderInside( ent ) )
+	else
+		Clipping.NewClip( ent , {Angle(self:GetClientNumber("p"),self:GetClientNumber("y"),0) , self:GetClientNumber("distance") })
 	
-	Clipping.NewClip( ent , {Angle(self:GetClientNumber("p"),self:GetClientNumber("y"),0) , self:GetClientNumber("distance") })
-
-	undo.Create("clip")
-		undo.AddFunction(function( data , ent , numclips )
-			Clipping.RemoveClip( ent , numclips )
-		end, ent , #Clipping.GetClips(ent))
-
-		undo.SetPlayer(self:GetOwner()) 
-	undo.Finish()
+		undo.Create("clip")
+			undo.AddFunction(function( data , ent , numclips )
+				Clipping.RemoveClip( ent , numclips )
+			end, ent , #Clipping.GetClips(ent))
+	
+			undo.SetPlayer(self:GetOwner()) 
+		undo.Finish()
+	end
 
 	return true;
 end
@@ -188,7 +192,7 @@ end
 
 if CLIENT then
 	function TOOL.BuildCPanel( pnl )
-		pnl:Help("#Tool.visual.desc")
+		pnl:Help("test dicks #Tool.visual.desc")
 
 		local clipfunctions = vgui.Create("DListView",pnl)
 		local tmp = clipfunctions:AddColumn("Plane functions")
@@ -243,9 +247,7 @@ if CLIENT then
 		end
 		temp2:SetShouldDrawScreen(true)
 
-
 		pnl:AddControl("Button", {Label = "Reset",Command = "visual_reset"})	
 		pnl:AddControl("Slider", { Label = "Max Clips Per Prop", Type = "int", Min = "0", Max = "25", Command = "max_clips_per_prop" } )
-
 	end
 end

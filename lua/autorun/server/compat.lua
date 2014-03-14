@@ -8,6 +8,8 @@ duplicator.RegisterEntityModifier( "clips", function( p , ent , data)
 		for _, clip in pairs(data) do
 			if IsValid(ent) then
 				Clipping.NewClip( ent , {clip.n,clip.d})
+
+				Clipping.RenderInside( ent , clip.inside )
 			end
 		end
 	end)

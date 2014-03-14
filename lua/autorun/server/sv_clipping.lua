@@ -2,6 +2,7 @@ AddCSLuaFile("autorun/client/clipping.lua")
 AddCSLuaFile("autorun/client/preview.lua")
 
 util.AddNetworkString("clipping_new_clip")
+util.AddNetworkString("clipping_render_inside")
 util.AddNetworkString("clipping_all_prop_clips")
 util.AddNetworkString("clipping_remove_clip")
 util.AddNetworkString("clipping_request_all_clips")
@@ -9,6 +10,7 @@ util.AddNetworkString("clipping_remove_all_clips")
 util.AddNetworkString("clipping_preview_clip")
 
 Clipping = {}
+Clipping.RenderingInside = {}
 Clipping.EntityClips = {}
 Clipping.Queue = {}
 
@@ -28,6 +30,21 @@ local function SendEntClip( ent , clip )
 		net.WriteEntity( ent )
 		WriteClip( clip )
 	net.Broadcast()
+end
+
+function Clipping.RenderInside( ent , enabled )
+	Clipping.RenderingInside[ ent ] = enabled
+
+	net.Start( "clipping_render_inside" )
+		net.WriteEntity( ent )
+		net.WriteBit( tobool( enabled ) )
+	net.Broadcast()
+
+	duplicator.StoreEntityModifier( ent , "clipping_render_inside", {enabled} )
+end
+
+function Clipping.GetRenderInside( ent )
+	return tobool( Clipping.RenderingInside[ ent ] )
 end
 
 function Clipping.NewClip( ent , clip )
@@ -102,5 +119,13 @@ duplicator.RegisterEntityModifier( "clipping_all_prop_clips", function( p , ent 
 				Clipping.NewClip( ent , clip)
 			end
 		end
+	end)
+end)
+
+duplicator.RegisterEntityModifier( "clipping_render_inside", function( p , ent , data)
+	if !IsValid(ent) then return end
+
+	timer.Simple(0.25 , function()
+		Clipping.RenderInside( ent , data[1] )
 	end)
 end)

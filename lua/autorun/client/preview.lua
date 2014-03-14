@@ -23,13 +23,6 @@ concommand.Add("visual_reset",function()
 	norm = Angle(0,0,0)
 end)
 
---local function ClipData( um )
---	norm = Angle(um:ReadFloat() , um:ReadFloat() , um:ReadFloat())
---	d = um:ReadFloat()
---	RunConsoleCommand("visual_adv_distance",d)
---end
---usermessage.Hook("visual_clip_data" , ClipData)
-
 
 net.Receive( "clipping_preview_clip" , function()
 	norm = Angle( net.ReadFloat() , net.ReadFloat() , net.ReadFloat() )
