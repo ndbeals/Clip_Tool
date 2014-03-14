@@ -42,13 +42,16 @@ end)
 
 net.Receive("clipping_render_inside" , function()
 	local ent = net.ReadEntity()
-	local enabled = net.ReadBit()
+	local enabled = tobool( net.ReadBit() )
+
 
 	if !IsValid(ent) then return end
 	ent.RenderInside = enabled
 
-	if !Clips[ent] then
+	if !Clips[ent] and enabled then
 		ent.RenderOverride = RenderInside
+	elseif !Clips[ent] then
+		ent.RenderOverride = nil 
 	end
 end)
 
@@ -76,7 +79,7 @@ net.Receive("clipping_remove_clip" , function ()
 	local ent = net.ReadEntity()
 	local index = net.ReadInt(16)
 
-	if !IsValid(ent) then return end
+	if !IsValid(ent) or !Clips[ent] then return end
 
 	table.remove(Clips[ent] , index) 
 	ent.MaxClips = math.min(cvar:GetInt() , #Clips[ent])
