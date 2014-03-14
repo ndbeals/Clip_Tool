@@ -9,9 +9,6 @@ end)
 cvars.AddChangeCallback("visual_distance",function(_,_,new)
 	d = tonumber(new) or 0	
 end)
-cvars.AddChangeCallback("visual_adv_distance",function(_,_,new)
-	d = tonumber(new) or 0		
-end)
 
 
 concommand.Add("visual_reset",function()
@@ -25,12 +22,12 @@ end)
 
 
 net.Receive( "clipping_preview_clip" , function()
-	norm = Angle( net.ReadFloat() , net.ReadFloat() , net.ReadFloat() )
-	d = net.ReadDouble()
-
 	RunConsoleCommand("visual_p",norm.p)
 	RunConsoleCommand("visual_y",norm.y)
 	RunConsoleCommand("visual_distance",d)
+
+	norm = Angle( net.ReadFloat() , net.ReadFloat() , net.ReadFloat() )
+	d = net.ReadDouble()
 end)
 
 

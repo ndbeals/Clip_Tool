@@ -44,7 +44,6 @@ net.Receive("clipping_render_inside" , function()
 	local ent = net.ReadEntity()
 	local enabled = tobool( net.ReadBit() )
 
-
 	if !IsValid(ent) then return end
 	ent.RenderInside = enabled
 
@@ -110,17 +109,17 @@ local ang_Forward = angm.Forward
 
 local IsValid = IsValid
 
-local n , enabled
+local n , enabled , curclips
 function RenderOverride(self)
 	if !IsValid(self) then return end
 	enabled = render_EnableClipping( true )
 
 	for i = 1 , self.MaxClips do
-		n = ang_Forward( ent_LocalToWorldAngles(self , Clips[self][i][1] ) )
+		curclips = Clips[self][i]
+		n = ang_Forward( ent_LocalToWorldAngles(self , [1] ) )
 		
-		render_PushCustomClipPlane(n, vec_Dot(ent_LocalToWorld(self , Clips[self][i][3])+n* Clips[self][i][2] , n ) )
+		render_PushCustomClipPlane(n, vec_Dot(ent_LocalToWorld( self , curclips[3] ) + n * curclips[2] , n ) )
 	end
-
 
 	ent_DrawModel( self )
 
@@ -138,12 +137,11 @@ function RenderOverride(self)
 end
 
 function RenderInside(self)
-	if IsValid(self) then
-		render_CullMode(MATERIAL_CULLMODE_CW)
-			ent_DrawModel( self )
-		render_CullMode(MATERIAL_CULLMODE_CCW)
+	if !IsValid(self) then return end
+	render_CullMode(MATERIAL_CULLMODE_CW)
 		ent_DrawModel( self )
-	end
+	render_CullMode(MATERIAL_CULLMODE_CCW)
+	ent_DrawModel( self )
 end
 
 hook.Add("InitPostEntity" , "RequestClips" , function()

@@ -218,10 +218,11 @@ if CLIENT then
 		temp2:SetMax(100)
 		temp2:SetMin(-100)
 		temp2:SetPos( 120 , 10)
+		temp2:SetDecimals(4)
 		temp2.OnValueChanged = function(self)
 			RunConsoleCommand("visual_distance",self:GetFloatValue())
 		end
-		temp2:SetShouldDrawScreen(true)
+		--temp2:SetShouldDrawScreen(true)
 
 
 		temp = pnl:AddControl("Slider", { Label = "Pitch", Type = "float", Min = "-180", Max = "180", Command = "visual_p" } )
@@ -229,11 +230,12 @@ if CLIENT then
 		temp2:SetParent(temp)
 		temp2:SetMax(180)
 		temp2:SetMin(-180)
+		temp2:SetDecimals(4)
 		temp2:SetPos( 120 , 10)
 		temp2.OnValueChanged = function(self)
 			RunConsoleCommand("visual_p",self:GetFloatValue())
 		end
-		temp2:SetShouldDrawScreen(true)
+		--temp2:SetShouldDrawScreen(true)
 
 
 		temp = pnl:AddControl("Slider", { Label = "Yaw", Type = "float", Min = "-180", Max = "180", Command = "visual_y" } )
@@ -241,11 +243,12 @@ if CLIENT then
 		temp2:SetParent(temp)
 		temp2:SetMax(180)
 		temp2:SetMin(-180)
+		temp2:SetDecimals(4)
 		temp2:SetPos( 120 , 10)
 		temp2.OnValueChanged = function(self)
 			RunConsoleCommand("visual_y",self:GetFloatValue())
 		end
-		temp2:SetShouldDrawScreen(true)
+		--temp2:SetShouldDrawScreen(true)
 
 		pnl:AddControl("Button", {Label = "Reset",Command = "visual_reset"})	
 		pnl:AddControl("Slider", { Label = "Max Clips Per Prop", Type = "int", Min = "0", Max = "25", Command = "max_clips_per_prop" } )
