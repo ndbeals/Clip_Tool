@@ -1,7 +1,7 @@
-/*
-Visual Clip Tool
-	by TGiFallen
-*/
+--[[
+	Visual Clip Tool
+	by TGiFallen and looter
+--]]
 
 TOOL.Category		= "Construction"
 TOOL.Name			= "#Visual Clip"
@@ -155,7 +155,7 @@ function TOOL:RightClick( trace )
 	if self:GetOwner():KeyDown( IN_SPEED ) then
 		Clipping.RenderInside( ent , !Clipping.GetRenderInside( ent ) )
 	else
-		Clipping.NewClip( ent , {Angle(self:GetClientNumber("p"),self:GetClientNumber("y"),0) , self:GetClientNumber("distance") })
+		clip.Register( ent , {Angle(self:GetClientNumber("p"),self:GetClientNumber("y"),0) , self:GetClientNumber("distance") })
 	
 		undo.Create("clip")
 			undo.AddFunction(function( data , ent , numclips )
