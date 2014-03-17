@@ -116,7 +116,7 @@ function RenderOverride(self)
 
 	for i = 1 , self.MaxClips do
 		curclips = Clips[self][i]
-		n = ang_Forward( ent_LocalToWorldAngles(self , [1] ) )
+		n = ang_Forward( ent_LocalToWorldAngles(self , curclips[1] ) )
 		
 		render_PushCustomClipPlane(n, vec_Dot(ent_LocalToWorld( self , curclips[3] ) + n * curclips[2] , n ) )
 	end
