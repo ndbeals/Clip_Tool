@@ -29,11 +29,11 @@ else
 end
 
 if SERVER then
-	TOOL.Function = 0
+	TOOL.Function = 1
 	function TOOL:Think()
 		local ent = self:GetOwner():GetEyeTraceNoCursor( ).Entity
 
-		if ent != self.LastEnt and IsValid(ent) and ( (self:GetStage() == 2) or (self:GetStage() == 4 or self.Function == 1 ) ) then
+		if ent != self.LastEnt and IsValid(ent) and (self:GetStage() == 4 or self:GetStage() == 2) then
 			self.LastEnt = ent
 
 			local ang = self.Normal:Angle()
