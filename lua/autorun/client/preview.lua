@@ -66,7 +66,7 @@ local function drawpreview()
 	end
 
 	if !IsValid(LocalPlayer()) or !IsValid(aiment) then return end
-	if GetConVarString("gmod_toolmode") != "visual" or LocalPlayer():GetActiveWeapon():GetClass() != "gmod_tool" then return end		
+	if GetConVarString("gmod_toolmode") != "visual" or LocalPlayer():GetActiveWeapon():GetClass() != "gmod_tool" or aiment:IsPlayer() then return end		
 
 	ent_SetNoDraw(aiment,true)
 

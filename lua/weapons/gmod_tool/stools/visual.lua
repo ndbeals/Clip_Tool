@@ -44,6 +44,10 @@ if SERVER then
 			local dist = -(self.Normal:Dot(pos-linepoint1))/(self.Normal:Dot(linepoint2-linepoint1))
 			ang = ent:WorldToLocalAngles(self.Normal:Angle())
 
+			RunConsoleCommand("visual_distance",dist)
+			RunConsoleCommand("visual_p",ang.p)
+			RunConsoleCommand("visual_y",ang.y)
+
 			net.Start("clipping_preview_clip")
 				net.WriteFloat( ang.p )
 				net.WriteFloat( ang.y )
@@ -100,6 +104,11 @@ function TOOL:LeftClick( trace )
 			net.WriteFloat( ang.r )
 			net.WriteDouble( dist )
 		net.Send( self:GetOwner() )
+
+		RunConsoleCommand("visual_distance",dist)
+		RunConsoleCommand("visual_p",ang.p)
+		RunConsoleCommand("visual_y",ang.y)
+
 	elseif self.Function == 2 then
 		self.Points[#self.Points+1] = trace.HitPos
 		self:SetStage(#self.Points)
@@ -138,6 +147,11 @@ function TOOL:LeftClick( trace )
 				net.WriteFloat( ang.r )
 				net.WriteDouble( dist )
 			net.Send( self:GetOwner() )
+			
+			RunConsoleCommand("visual_distance",dist)
+			RunConsoleCommand("visual_p",ang.p)
+			RunConsoleCommand("visual_y",ang.y)
+
 		end
 	end
 	return true
