@@ -48,12 +48,12 @@ if SERVER then
 			self:GetOwner():ConCommand("visual_p ".. tostring(ang.p))
 			self:GetOwner():ConCommand("visual_y ".. tostring(ang.y))
 
-			net.Start("clipping_preview_clip")
-				net.WriteFloat( ang.p )
-				net.WriteFloat( ang.y )
-				net.WriteFloat( ang.r )
-				net.WriteDouble( dist )
-			net.Send( self:GetOwner() )
+			--net.Start("clipping_preview_clip")
+			--	net.WriteFloat( ang.p )
+			--	net.WriteFloat( ang.y )
+			--	net.WriteFloat( ang.r )
+			--	net.WriteDouble( dist )
+			--net.Send( self:GetOwner() )
 		end
 	end
 
@@ -98,12 +98,12 @@ function TOOL:LeftClick( trace )
 
 		ang = ent:WorldToLocalAngles(self.Normal:Angle())
 
-		net.Start("clipping_preview_clip")
-			net.WriteFloat( ang.p )
-			net.WriteFloat( ang.y )
-			net.WriteFloat( ang.r )
-			net.WriteDouble( dist )
-		net.Send( self:GetOwner() )
+		--net.Start("clipping_preview_clip")
+		--	net.WriteFloat( ang.p )
+		--	net.WriteFloat( ang.y )
+		--	net.WriteFloat( ang.r )
+		--	net.WriteDouble( dist )
+		--net.Send( self:GetOwner() )
 
 		self:GetOwner():ConCommand("visual_distance ".. tostring(dist))
 		self:GetOwner():ConCommand("visual_p ".. tostring(ang.p))
@@ -141,12 +141,12 @@ function TOOL:LeftClick( trace )
 			self.Position = linepoint1
 			self.Normal= -normal
 
-			net.Start("clipping_preview_clip")
-				net.WriteFloat( ang.p )
-				net.WriteFloat( ang.y )
-				net.WriteFloat( ang.r )
-				net.WriteDouble( dist )
-			net.Send( self:GetOwner() )
+			--net.Start("clipping_preview_clip")
+			--	net.WriteFloat( ang.p )
+			--	net.WriteFloat( ang.y )
+			--	net.WriteFloat( ang.r )
+			--	net.WriteDouble( dist )
+			--net.Send( self:GetOwner() )
 
 			self:GetOwner():ConCommand("visual_distance ".. tostring(dist))
 			self:GetOwner():ConCommand("visual_p ".. tostring(ang.p))
