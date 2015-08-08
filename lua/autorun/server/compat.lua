@@ -2,7 +2,7 @@
 
 duplicator.RegisterEntityModifier( "clips", function( p , ent , data)
 	if !IsValid(ent)  or !data then return end
-	
+	if ent:GetTable().EntityMods and ent:GetTable().EntityMods.clipping_all_prop_clips then return end -- Got newer clipping table, screw old one.
 
 	timer.Simple(0.25 , function()
 		for _, clip in pairs(data) do
