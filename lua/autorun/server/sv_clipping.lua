@@ -53,7 +53,9 @@ function Clipping.NewClip( ent , clip )
 	else
 		table.insert( Clipping.EntityClips[ ent ] , clip )
 	end
-
+	
+	if ent:GetTable().EntityMods and ent:GetTable().EntityMods.clips then ent:GetTable().EntityMods.clips = nil end -- Get rid of old junk.
+	
 	ent:CallOnRemove( "RemoveFromClippedTable" , function( ent ) Clipping.EntityClips[ent] = nil end)
 	duplicator.StoreEntityModifier( ent , "clipping_all_prop_clips", Clipping.EntityClips[ent] )
 
